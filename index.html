@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet "href="styles.css">
+    <script type="module" src="main.js" defer></script>
+    <script src="jquery.js" ></script>
+    <title>Adopt A Pokemon</title>
+</head>
+<body>
+    <h1>Adopt a Pokemon!</h1>
+    <h2>Our Mission</h2>
+    <aritcle>When you adopt a Pokemon, you gain a life long friend. 
+        Here at Adopt a Pokemon, our goal is for the community to Adopt'em all.
+        All of the Pokemon here at our shelter were rescued.
+    </aritcle>
+
+    <div id="adoptListContainer">
+        <h1>Pokemon looking for life long companions</h1>
+        <ol id="adoptList">
+            <li id="pokeman1" class="pokeman"></li>
+        </ol>
+    </div>
+
+    <label for="pokemon-select">Choose a Pokemon to adopt</label><br>
+        <select id="pokeSelect" value="">--Chose a Pokemon--
+            <option class="pokemon-select-option" value="Marowak">Marowak</option>
+            <option class="pokemon-select-option" value="Alakazam">Alakazam</option>
+            <option class="pokemon-select-option" value="Porygon">Porygon</option>
+        </select>
+    
+    <div id="pokeInfo">
+        <h3 id="pokeName"></h3>
+        <p id="pokeType"></p>
+    </div>
+</body>
+</html>

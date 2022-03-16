@@ -1,0 +1,16 @@
+
+#adoptListContainer {
+    padding: 0;
+    margin: 0 0 0 20%;
+    background-color: rgb(185, 185, 185);
+    width: 40%;
+    height: 85%;
+}
+
+#adoptList {
+    background-color: aqua;
+    display: flex;
+}
+.adoptButton {
+    background-color: rgb(148, 148, 247);
+}
