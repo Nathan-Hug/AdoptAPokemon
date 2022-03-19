@@ -62,7 +62,6 @@ const fetchPokemon = () =>
   {
     const url = `https://pokeapi.co/api/v2/pokemon/${waitingPokemon[i]}`;
     promises.push(fetch(url).then((res) => res.json()));
-    adoptablePokemon.push(fetch(url).then((res) => res.json()));
   }
 
   Promise.all(promises).then(results => 
@@ -78,7 +77,6 @@ const fetchPokemon = () =>
 }
 
 fetchPokemon(); // Run the function for fetching Pokemon data
-console.log(adoptablePokemon);
 // Display the Pokemon data that was fetched into link html elements
 // This function is called inside fetchPokemon, line 67
 const displayPokemon = (pokemon) =>
@@ -97,22 +95,55 @@ const displayPokemon = (pokemon) =>
     adoptList.innerHTML = pokemonString;
 }
 
+function addAdoptablePokemon() {
+  const pokeSelect = document.getElementById('pokeSelect').value.toLowerCase();
+  
+  const pokeName = document.getElementById('pokeName'); // Pokemon data
+  const adoptionPic1 = document.getElementById('adoptionPic1'); // Pokemon data
+  const adoptionPic2 = document.getElementById('adoptionPic2'); // Pokemon data
+  const adoptionPic3 = document.getElementById('adoptionPic3'); // Pokemon data
+  const habitat = document.getElementById('habitat'); // Pokemon data
+  const generalInfo = document.getElementById('generalInfo'); // Pokemon data
+ 
 
-pokeSelect.onchange = setPokeInfo;
+  const url = `https://pokeapi.co/api/v2/pokemon/${pokeSelect}`;
+  const urlTwo = `https://pokeapi.co/api/v2/pokemon-species/${pokeSelect}` // MUST be ID
 
-// Set detailed information of current option select from Pokemon that are available for adoption
-function setPokeInfo() {
-  for(let i = 0; i < testPokemon.length; i++)
-  {
-    if(pokeSelect.value === testPokemon[i].name) 
+  const promises = [];
+  const promises2 = [];
+
+  promises.push(fetch(url).then((res) => res.json()));
+  promises2.push(fetch(urlTwo).then((res) => res.json()));
+
+    Promise.all(promises).then(results => 
     {
-      pokeName.innerHTML = testPokemon[i].name;
-    }
-  }
+      const pokemon = results.map((data) =>({
+        name : data.name.charAt(0).toUpperCase() + data.name.slice(1),
+        id : data.id,
+        weight : data.weight,
+        frontImage : data.sprites.other['official-artwork']['front_default'],
+        backImage : data.sprites['back_default'],
+        frontImageTwo : data.sprites.other['dream_world']['front_default'],
+        type : data.types.map((type) => type.type.name)
+      }));
+      pokeName.innerHTML = pokemon[0].name;
+      adoptionPic1.innerHTML = `<img height="200px" width="200px" src="${pokemon[0].frontImage}"/>`;
+      adoptionPic2.innerHTML = `<img height="200px" width="200px" src="${pokemon[0].backImage}"/>`;
+      adoptionPic3.innerHTML = `<img height="200px" width="200px" src="${pokemon[0].frontImageTwo}"/>`;
+      generalInfo.innerHTML = "Weight: " + pokemon[0].weight;
+    });
+
+    Promise.all(promises2).then(results => 
+      {
+        const pokemon = results.map((data) =>({
+          form : data.habitat
+        }));
+        habitat.innerHTML = pokeSelect.charAt(0).toUpperCase() + pokeSelect.slice(1) + " will thrive best in a " + pokemon[0].form.name + " type of environment.";
+      });
 }
 
 
-
+pokeSelect.onchange = addAdoptablePokemon;
 
 
 /*

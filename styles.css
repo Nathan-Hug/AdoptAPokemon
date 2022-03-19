@@ -14,3 +14,22 @@
 .adoptButton {
     background-color: rgb(148, 148, 247);
 }
+
+#adoptionPic1 {
+    background-color: gray;
+    height: 250px;
+    width: 250px;
+    object-fit: contain;
+}
+#adoptionPic2 {
+    background-color: gray;
+    height: 250px;
+    width: 250px;
+    object-fit: contain;
+}
+#adoptionPic3 {
+    background-color: gray;
+    height: 250px;
+    width: 250px;
+    object-fit: contain;
+}
