@@ -83,11 +83,11 @@ const displayPokemon = (pokemon) =>
 {
     console.log(pokemon);
     const pokemonString = pokemon.map(pokeman => `
-      <li>
-        <img src="${pokeman.image}"/>
-        <h2>${pokeman.id}. ${pokeman.name}</h2>
-        <p>Type: ${pokeman.type}</p>
-        <button id="${pokeman.id}" class="adoptButton">Adopt Me</button>
+      <li class="card">
+        <img class="card-image" src="${pokeman.image}"/>
+        <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
+        <p class="card-subtitle">Type: ${pokeman.type}</p>
+        <button id="${pokeman.id}" class="adoptButton"><a class="adoptionButtonLink" href="#windowTwo">Adopt Me</a></button>
       </li>`
       )
       .join('');
@@ -120,6 +120,7 @@ function addAdoptablePokemon() {
       const pokemon = results.map((data) =>({
         name : data.name.charAt(0).toUpperCase() + data.name.slice(1),
         id : data.id,
+        height : data.height,
         weight : data.weight,
         frontImage : data.sprites.other['official-artwork']['front_default'],
         backImage : data.sprites['back_default'],
@@ -130,7 +131,7 @@ function addAdoptablePokemon() {
       adoptionPic1.innerHTML = `<img height="200px" width="200px" src="${pokemon[0].frontImage}"/>`;
       adoptionPic2.innerHTML = `<img height="200px" width="200px" src="${pokemon[0].backImage}"/>`;
       adoptionPic3.innerHTML = `<img height="200px" width="200px" src="${pokemon[0].frontImageTwo}"/>`;
-      generalInfo.innerHTML = "Weight: " + pokemon[0].weight;
+      generalInfo.innerHTML = "Height: " + pokemon[0].height + "<br>" + "Weight: " + pokemon[0].weight;
     });
 
     Promise.all(promises2).then(results => 
