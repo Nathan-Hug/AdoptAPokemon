@@ -103,7 +103,7 @@ function addAdoptablePokemon() {
   const adoptionPic2 = document.getElementById('adoptionPic2'); // Pokemon data
   const adoptionPic3 = document.getElementById('adoptionPic3'); // Pokemon data
   const habitat = document.getElementById('habitat'); // Pokemon data
-  const generalInfo = document.getElementById('generalInfo'); // Pokemon data
+  const generalInfo = document.getElementById('pokeGeneralInfo'); // Pokemon data
  
 
   const url = `https://pokeapi.co/api/v2/pokemon/${pokeSelect}`;
@@ -134,6 +134,7 @@ function addAdoptablePokemon() {
       generalInfo.innerHTML = "Height: " + pokemon[0].height + "<br>" + "Weight: " + pokemon[0].weight;
     });
 
+    // The below promise.ALL does not need to be an .ALL method since only ONE promise is pushed into promises2 array. Refactor required
     Promise.all(promises2).then(results => 
       {
         const pokemon = results.map((data) =>({

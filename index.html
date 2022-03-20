@@ -12,12 +12,19 @@
 <body>
 
     <div id="windowOne">
-        <h1>Adopt a Pokemon!</h1>
-        <h2>Our Mission</h2>
-        <aritcle>When you adopt a Pokemon, you gain a life long friend. 
-            Here at Adopt a Pokemon, our goal is for the community to Adopt'em all.
-            All of the Pokemon here at our shelter were rescued.
-        </aritcle>
+        <div id="missonContainer">
+            <h1 id="siteTitle">Adopt a Pokemon!</h1>
+            <h2 class="statementLabel">Our Mission</h2>
+            <aritcle class="siteInfo">When you adopt a Pokemon, you gain a life long friend. 
+                Here at Adopt a Pokemon, our goal is for the community to adopt'em all.
+                All of the Pokemon here at our shelter were rescued.
+            </aritcle>
+            <h2 class="statementLabel">History & Info</h2>
+            <aritcle class="siteInfo">Our shelter has been serving the community for over 100 years.
+                Our staff are trained to not only help you find your perfect life long companion, but also 
+                provide you with the right tools and information you need to feel comfortable with your adoption.
+            </aritcle>
+        </div>
 
         <div id="adoptListContainer">
             <h1>Pokemon looking for life long companions</h1>
@@ -28,7 +35,7 @@
     </div>
 
     <div id="windowTwo">
-        <label for="pokemon-select">Choose a Pokemon to adopt</label><br>
+        <label id="selectLabel" for="pokemon-select">Choose a Pokemon to adopt</label><br>
             <select id="pokeSelect" value="">--Choose a Pokemon--
                 <option class="pokemon-select-option" value="">--Select a Pokemon--</option>
                 <option class="pokemon-select-option" value="Marowak">Marowak</option>
@@ -45,14 +52,20 @@
         
         <div id="pokeInfo">
             <h3 id="pokeName"></h3>
-            <div id="pokePics">
+            
+            <div id="pokePicsContainer">
                 <p class="pokePic" id="adoptionPic1"></p>
                 <p class="pokePic" id="adoptionPic3"></p>
                 <p class="pokePic" id="adoptionPic2"></p>
             </div>
-            <p id="generalInfo"></p>
-            <p id="habitat"></p>
+
+            <div id="generalInfo">
+                <p class="generalInfoP" id="pokeGeneralInfo"></p>
+                <p class="generalInfoP" id="habitat"></p>
+            </div>
+
         </div>
+
     </div>
 
 </body>
