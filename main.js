@@ -50,6 +50,8 @@ const pokeSelect = document.getElementById('pokeSelect');
 const pokeName = document.getElementById('pokeName');
 const pokemonSelectOption = document.getElementsByClassName('pokemon-select-option');
 const adoptablePokemon = [];
+const selectedPokemon = document.getElementById('selectedPokemon');
+const adoptSubmitButton = document.getElementById('adoptSubmitButton');
 
 
 // Fetch Pokemon data from the API
@@ -97,14 +99,12 @@ const displayPokemon = (pokemon) =>
 
 function addAdoptablePokemon() {
   const pokeSelect = document.getElementById('pokeSelect').value.toLowerCase();
-  
   const pokeName = document.getElementById('pokeName'); // Pokemon data
   const adoptionPic1 = document.getElementById('adoptionPic1'); // Pokemon data
   const adoptionPic2 = document.getElementById('adoptionPic2'); // Pokemon data
   const adoptionPic3 = document.getElementById('adoptionPic3'); // Pokemon data
   const habitat = document.getElementById('habitat'); // Pokemon data
   const generalInfo = document.getElementById('pokeGeneralInfo'); // Pokemon data
- 
 
   const url = `https://pokeapi.co/api/v2/pokemon/${pokeSelect}`;
   const urlTwo = `https://pokeapi.co/api/v2/pokemon-species/${pokeSelect}` // MUST be ID
@@ -142,10 +142,27 @@ function addAdoptablePokemon() {
         }));
         habitat.innerHTML = pokeSelect.charAt(0).toUpperCase() + pokeSelect.slice(1) + " will thrive best in a " + pokemon[0].form.name + " type of environment.";
       });
+      selectedPokemon.innerHTML = "You are adopting " + "<br>" + pokeSelect.charAt(0).toUpperCase() + pokeSelect.slice(1);
+}
+
+function clearForm() {
+  let pokeSelect = document.getElementById('pokeSelect');
+  let adoptFormName = document.getElementById('adoptFormName');
+  let adoptFormEmail = document.getElementById('adoptFormEmail');
+  let currentPokemon = document.getElementById('currentPokemon');
+  let adoptionReason = document.getElementById('adoptionReason');
+
+  alert("Your submission was received. We will respond within 3 business days");
+  pokeSelect.value = "";
+  adoptFormName.value = "";
+  adoptFormEmail.value = "";
+  currentPokemon.value = "";
+  adoptionReason.value = "";
 }
 
 
 pokeSelect.onchange = addAdoptablePokemon;
+adoptSubmitButton.addEventListener('click', clearForm);
 
 
 /*

@@ -63,9 +63,32 @@
                 <p class="generalInfoP" id="pokeGeneralInfo"></p>
                 <p class="generalInfoP" id="habitat"></p>
             </div>
-
         </div>
 
+        <div id="adoptionFormContainer">
+            <label id="adoptFormLabel" for="adoptionForm">Adoption Form</label><br>
+            <form id="adoptionForm">
+                <p id="detailedAdoptInfo">Please enter your information below. Once you submit the adoption form,
+                    our team will be notified and will follow up with you within 3 business days.
+                </p>
+
+                <p id="selectedPokemon">You are adopting: </p>
+
+                <label for="adoptFormName"></label>
+                <input class="adoptionFormInput" id="adoptFormName" type="text" required placeholder="Name"><br>
+
+                <label for="adoptFormEmail"></label><br>
+                <input class="adoptionFormInput" id="adoptFormEmail" type="email" placeholder="Email" required><br><br>
+
+                <label for="currentPokemon">Number of Pokemon you currently have</label>
+                <input class="adoptionFormInput" id="currentPokemon" type="number" required><br><br>
+
+                <label for="adoptionReason"></label>
+                <textarea id="adoptionReason" cols="40" rows="10" placeholder="Please tell us why you want to adopt a Pokemon."></textarea><br>
+
+                <button type="" id="adoptSubmitButton">Submit</button>
+            </form>
+        </div>
     </div>
 
 </body>
