@@ -51,7 +51,7 @@
             </select>
         
         <div id="pokeInfo">
-            <h3 id="pokeName"></h3>
+            <h3 id="pokeName">Select a Pokemon</h3>
             
             <div id="pokePicsContainer">
                 <p class="pokePic" id="adoptionPic1"></p>
@@ -74,17 +74,14 @@
 
                 <p id="selectedPokemon">You are adopting: </p>
 
-                <label for="adoptFormName"></label>
                 <input class="adoptionFormInput" id="adoptFormName" type="text" required placeholder="Name"><br>
 
-                <label for="adoptFormEmail"></label><br>
                 <input class="adoptionFormInput" id="adoptFormEmail" type="email" placeholder="Email" required><br><br>
 
                 <label for="currentPokemon">Number of Pokemon you currently have</label>
-                <input class="adoptionFormInput" id="currentPokemon" type="number" required><br><br>
+                <input class="adoptionFormInput" id="currentPokemon" type="number" placeholder="0" required><br><br>
 
-                <label for="adoptionReason"></label>
-                <textarea id="adoptionReason" cols="40" rows="10" placeholder="Please tell us why you want to adopt a Pokemon."></textarea><br>
+                <textarea id="adoptionReason" cols="30" rows="5" placeholder="Please tell us why you want to adopt a Pokemon."></textarea><br>
 
                 <button type="" id="adoptSubmitButton">Submit</button>
             </form>

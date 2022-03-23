@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Ramaraja&display=swap');
 
 html, body {
+    font-family: 'Ramaraja', serif;
     margin: 0;
     padding: 0;
 }
@@ -70,14 +72,20 @@ html, body {
 }
 
 .card-image {
+    margin: 0;
+    padding: 0;
     height: 180px;
 }
 
 .card-title {
+    margin: 0;
+    padding: 0;
     font-size: 18pt;
 }
 
 .card-subtitle {
+    margin: 0;
+    padding: 0;
     font-size: 15pt;
 }
 
@@ -104,46 +112,53 @@ html, body {
 }
 
 #selectLabel {
-    margin: 10px 10px 0 25px;
+    margin: 70px 10px 0 25px;
+    padding: 0;
     text-align: center;
     height: 50px;
-    width: 20%;
-    font-size: 25pt;
+    width: auto;
+    font-size: 20pt;
     position: absolute;
 }
 
     #pokeSelect {
-        margin: 50px 20px 0 20px;
+        margin: 115px 10px 0 25px;
         height: 75px;
-        width: 20%;
-        font-size: 25pt;
+        width: auto;
+        font-size: 20pt;
         text-align: center;
     }
 
 #pokeInfo {
-    margin: 0;
+    background-color: rgb(168, 168, 168);
+    margin: 0 0 0 50px;
     padding: 0;
+    height: 73%;
     width: 40%;
+    border-radius: 5px;
 }
 
     #pokeName {
         width: 300px;
         padding: 0;
         font-size: 35pt;
-        margin: 0 0 0 300px;
+        margin: 0 0 0 37%;
+        height: 50px;
     } 
 
     #pokePicsContainer {
+        background-color: gray;
         padding: 0;
-        height: 250px;
-        width: auto;
-        display: flex;
-        justify-content: space-between;
+        height: auto;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+        grid-gap: 1px;
     }
 
     .pokePic{
-        margin: 10px;
-        background-color: gray;
+        text-align: center;
+        margin: auto;
         width: 210px;
         object-fit: contain;
     }
@@ -164,27 +179,31 @@ html, body {
     text-align: center;
     font-size: 20pt;
     background-color: rgb(168, 168, 168);
-    margin: 50px;
+    margin: 0 0 0 50px;
     padding: 0;
-    height: 805px;
+    height: 850px;
     width: 600px;
     border-radius: 5px;
 }
 
     #adoptionForm {
         background-color: rgb(168, 168, 168);
-        margin: 25px 25px 0 25px;
+        margin: 5px 25px 0 25px;
         border-radius: 5px;
+        height: 750px;
     }
-
+    
     #adoptFormLabel {
-        font-size: 35pt;
-        border-bottom: solid black 2px;
-        margin: 15px 0 0 20px;
+        margin: 0;
+        padding: 0;
+        font-size: 30pt;
+        text-decoration: underline;
     }
 
     #selectedPokemon {
-        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        font-size: 28pt;
     }
 
     .adoptionFormInput {
@@ -204,10 +223,13 @@ html, body {
     }
 
     #adoptionReason {
+        border-radius: 3px;
         font-size: 15pt;
     }
 
     #adoptSubmitButton {
+        margin: 0;
+        padding: 0;
         font-size: 18pt;
         height: 50px;
         width: 150px;

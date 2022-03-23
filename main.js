@@ -128,9 +128,9 @@ function addAdoptablePokemon() {
         type : data.types.map((type) => type.type.name)
       }));
       pokeName.innerHTML = pokemon[0].name;
-      adoptionPic1.innerHTML = `<img height="200px" width="200px" src="${pokemon[0].frontImage}"/>`;
-      adoptionPic2.innerHTML = `<img height="200px" width="200px" src="${pokemon[0].backImage}"/>`;
-      adoptionPic3.innerHTML = `<img height="200px" width="200px" src="${pokemon[0].frontImageTwo}"/>`;
+      adoptionPic1.innerHTML = `<img height="150px" width="150px" src="${pokemon[0].frontImage}"/>`;
+      adoptionPic2.innerHTML = `<img height="150px" width="150px" src="${pokemon[0].backImage}"/>`;
+      adoptionPic3.innerHTML = `<img height="150px" width="150px" src="${pokemon[0].frontImageTwo}"/>`;
       generalInfo.innerHTML = "Height: " + pokemon[0].height + "<br>" + "Weight: " + pokemon[0].weight;
     });
 
@@ -142,7 +142,7 @@ function addAdoptablePokemon() {
         }));
         habitat.innerHTML = pokeSelect.charAt(0).toUpperCase() + pokeSelect.slice(1) + " will thrive best in a " + pokemon[0].form.name + " type of environment.";
       });
-      selectedPokemon.innerHTML = "You are adopting " + "<br>" + pokeSelect.charAt(0).toUpperCase() + pokeSelect.slice(1);
+      selectedPokemon.innerHTML = "You are adopting " + "<br>" + "<b>" + pokeSelect.charAt(0).toUpperCase() + pokeSelect.slice(1) + "</b>";
 }
 
 function clearForm() {
@@ -151,13 +151,22 @@ function clearForm() {
   let adoptFormEmail = document.getElementById('adoptFormEmail');
   let currentPokemon = document.getElementById('currentPokemon');
   let adoptionReason = document.getElementById('adoptionReason');
-
-  alert("Your submission was received. We will respond within 3 business days");
-  pokeSelect.value = "";
-  adoptFormName.value = "";
-  adoptFormEmail.value = "";
-  currentPokemon.value = "";
-  adoptionReason.value = "";
+  if(adoptFormName.value == "")
+    {
+      alert("Please enter your name")
+    }
+    else if(adoptFormEmail.value == "")
+    {
+      alert("Please enter your email")
+    }else 
+    {
+      alert("Your submission was received. We will respond within 3 business days");
+      pokeSelect.value = "";
+      adoptFormName.value = "";
+      adoptFormEmail.value = "";
+      currentPokemon.value = "";
+      adoptionReason.value = "";
+    } 
 }
 
 
